@@ -1,0 +1,44 @@
+{
+    "name": "@xiaohaih/storage",
+    "type": "module",
+    "version": "0.0.1",
+    "description": "",
+    "author": "xiaohai",
+    "license": "MIT",
+    "homepage": "https://github.com/xiaohaiH/storage/tree/master",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xiaohaiH/storage/tree/master"
+    },
+    "keywords": ["localStorage", "sessionStorage", "storage", "web storage", "browser storage"],
+    "exports": {
+        ".": {
+            "browser": "./dist/index.js",
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        },
+        "./*": "./*"
+    },
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsdown",
+        "test": "vitest",
+        "publish": "npm publish --access=public"
+    },
+    "devDependencies": {
+        "@antfu/eslint-config": "^4.3.0",
+        "@typescript-eslint/eslint-plugin": "^8.19.1",
+        "@typescript-eslint/parser": "^8.19.1",
+        "eslint": "^9.18.0",
+        "eslint-plugin-format": "^1.0.1",
+        "tsdown": "^0.12.4",
+        "typescript": "~5.7.2",
+        "vitest": "^3.1.4"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    }
+}
