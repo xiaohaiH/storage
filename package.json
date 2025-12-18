@@ -1,7 +1,7 @@
 {
     "name": "@xiaohaih/storage",
     "type": "module",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "",
     "author": "xiaohai",
     "license": "MIT",
@@ -26,7 +26,7 @@
     "scripts": {
         "build": "tsdown",
         "test": "vitest",
-        "publish": "npm publish --access=public"
+        "publishing": "npm run build && npm publish --access=public"
     },
     "devDependencies": {
         "@antfu/eslint-config": "^4.3.0",
