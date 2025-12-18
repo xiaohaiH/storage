@@ -9,7 +9,7 @@ describe('storageCore', () => {
         mockStorage = {
             store: {} as Record<string, any>,
             setItem: vi.fn(function (this: typeof mockStorage, key, value) { this.store[key] = value; }),
-            getItem: vi.fn(function (this: typeof mockStorage, key) { return this.store[key]; }),
+            getItem: vi.fn(function (this: typeof mockStorage, key) { return this.store[key] || null; }),
             removeItem: vi.fn(function (this: typeof mockStorage, key) { delete this.store[key]; }),
             clear: vi.fn(function (this: typeof mockStorage) { this.store = {}; }),
         };

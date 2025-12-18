@@ -98,12 +98,15 @@ export function noop(value: any) {
 export function stringify(val: any) {
     return JSON.stringify(val);
 }
-/** 解析 JSON字符串, 解析失败时返回默认值 */
+/**
+ * 解析 JSON字符串, 解析失败时返回默认值
+ * (由于 null 可被 JSON.parse 解析且 localStorage 未设置值时会返回 null, 因此对 null 做特殊处理)
+ */
 export function parse<T>(val: any, defaultValue?: T): T | null {
     try {
-        return JSON.parse(val);
+        const r = JSON.parse(val);
+        if (r !== null) return r;
     }
-    catch (error) {
-        return defaultValue || null;
-    }
+    catch (error) {}
+    return defaultValue === undefined ? null : defaultValue;
 }
